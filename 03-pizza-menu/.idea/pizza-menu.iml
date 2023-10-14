@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="WEB_MODULE" version="4">
+  <component name="NewModuleRootManager">
+    <content url="file://$MODULE_DIR$/../03-pizza-menu">
+      <excludeFolder url="file://$MODULE_DIR$/../03-pizza-menu/build" />
+      <excludeFolder url="file://$MODULE_DIR$/../03-pizza-menu/.tmp" />
+      <excludeFolder url="file://$MODULE_DIR$/../03-pizza-menu/tmp" />
+      <excludeFolder url="file://$MODULE_DIR$/../03-pizza-menu/temp" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+  </component>
+</module>
