@@ -50,11 +50,43 @@ const pizzaData = [
 function App() {
     return (
         <div>
-            <h1>Hello React!</h1>
-            <Pizza />
-            <Pizza />
-            <Pizza />
+            <Header/>
+            <Menu/>
+            <Footer/>
         </div>
+    );
+}
+
+function Header() {
+    return (
+        <div>
+            <h1>Fast React Pizza Co.</h1>
+        </div>
+    );
+}
+
+function Menu() {
+    return (
+        <div>
+            <h2>Our menu</h2>
+            <ul>
+                {pizzaData.map((pizza, index) => {
+                    return (
+                        <li key={index}>
+                            <Pizza/>
+                        </li>
+                    );
+                })}
+            </ul>
+        </div>
+    );
+}
+
+function Footer() {
+    return (
+        <footer>
+            {new Date().toLocaleTimeString()}. We're currently open!
+        </footer>
     );
 }
 
@@ -71,6 +103,6 @@ function Pizza() {
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+      <App/>
   </React.StrictMode>
 );
