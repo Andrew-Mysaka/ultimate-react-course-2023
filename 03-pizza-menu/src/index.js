@@ -73,16 +73,32 @@ function Menu() {
     return (
         <main className={'menu'}>
             <h2>Our menu</h2>
-            <ul>
-                {pizzaData.map((pizza, index) => {
-                    return (
-                        <li key={index}>
-                            <Pizza/>
-                        </li>
-                    );
-                })}
-            </ul>
+            {pizzaData.map((pizza, index) => {
+                return (
+                    <div key={index}>
+                        <Pizza
+                            name={pizza.name}
+                            photoName={pizza.photoName}
+                            ingredients={pizza.ingredients}
+                            price={pizza.price}
+                        />
+                    </div>
+                );
+            })}
         </main>
+    );
+}
+
+function Pizza(props) {
+    return (
+        <div className={'pizza'}>
+            <img src={props.photoName} alt={props.name}/>
+            <div>
+                <h3>{props.name}</h3>
+                <p>{props.ingredients}</p>
+                <span>Price: ${props.price}</span>
+            </div>
+        </div>
     );
 }
 
@@ -96,16 +112,6 @@ function Footer() {
         <footer className={'footer'}>
             {new Date().toLocaleTimeString()}. We're currently open!
         </footer>
-    );
-}
-
-function Pizza() {
-    return (
-        <div>
-            <img src={pizzaData[0].photoName} alt={pizzaData[0].name} />
-            <h3>{pizzaData[0].name}</h3>
-            <p>"Tomato, mozarella, spinach, and ricotta cheese"</p>
-        </div>
     );
 }
 
