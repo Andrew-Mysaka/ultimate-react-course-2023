@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import './index.css';
 
 const pizzaData = [
     {
@@ -49,7 +50,7 @@ const pizzaData = [
 
 function App() {
     return (
-        <div>
+        <div className={'container'}>
             <Header/>
             <Menu/>
             <Footer/>
@@ -58,16 +59,19 @@ function App() {
 }
 
 function Header() {
+    // const styles = {color:"red", fontSize: '48px', textTransform: 'uppercase'}
+    const styles = {}
+
     return (
-        <div>
-            <h1>Fast React Pizza Co.</h1>
-        </div>
+        <header className={'header'}>
+            <h1 style={styles} >Fast React Pizza Co.</h1>
+        </header>
     );
 }
 
 function Menu() {
     return (
-        <div>
+        <main className={'menu'}>
             <h2>Our menu</h2>
             <ul>
                 {pizzaData.map((pizza, index) => {
@@ -78,7 +82,7 @@ function Menu() {
                     );
                 })}
             </ul>
-        </div>
+        </main>
     );
 }
 
@@ -88,11 +92,8 @@ function Footer() {
     const closeHour = 22;
     const isOpen = hour >= openHour && hour <= closeHour;
 
-    // if (hour >= openHour && hour <= closeHour) alert("We're currently open!");
-    // else alert("Sorry we're closed!");
-
     return (
-        <footer>
+        <footer className={'footer'}>
             {new Date().toLocaleTimeString()}. We're currently open!
         </footer>
     );
@@ -102,7 +103,7 @@ function Pizza() {
     return (
         <div>
             <img src={pizzaData[0].photoName} alt={pizzaData[0].name} />
-            <h2>{pizzaData[0].name}</h2>
+            <h3>{pizzaData[0].name}</h3>
             <p>"Tomato, mozarella, spinach, and ricotta cheese"</p>
         </div>
     );
