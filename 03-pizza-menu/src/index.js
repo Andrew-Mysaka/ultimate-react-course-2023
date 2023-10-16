@@ -73,18 +73,13 @@ function Menu() {
     return (
         <main className={'menu'}>
             <h2>Our menu</h2>
-            {pizzaData.map((pizza, index) => {
-                return (
-                    <div key={index}>
-                        <Pizza
-                            name={pizza.name}
-                            photoName={pizza.photoName}
-                            ingredients={pizza.ingredients}
-                            price={pizza.price}
-                        />
-                    </div>
-                );
-            })}
+            <ul className={'pizzas'}>
+                {pizzaData.map((pizza, index) => {
+                    return (
+                        <Pizza pizzaObject={pizza} key={index}/>
+                    );
+                })}
+            </ul>
         </main>
     );
 }
@@ -92,11 +87,11 @@ function Menu() {
 function Pizza(props) {
     return (
         <div className={'pizza'}>
-            <img src={props.photoName} alt={props.name}/>
+            <img src={props.pizzaObject.photoName} alt={props.pizzaObject.name}/>
             <div>
-                <h3>{props.name}</h3>
-                <p>{props.ingredients}</p>
-                <span>Price: ${props.price}</span>
+                <h3>{props.pizzaObject.name}</h3>
+                <p>{props.pizzaObject.ingredients}</p>
+                <span>Price: ${props.pizzaObject.price}</span>
             </div>
         </div>
     );
