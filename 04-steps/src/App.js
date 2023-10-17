@@ -5,7 +5,15 @@ const messages = [
 ];
 
 function App() {
-    const step = 1;
+    let step = 1;
+
+    function handlePrevious() {
+
+    }
+
+    function handleNext() {
+
+    }
 
     return (
         <div className={'steps'}>
@@ -18,8 +26,10 @@ function App() {
             <p className={'message'}>Step {step}: {messages[step - 1]}</p>
 
             <div className={'buttons'}>
-                <button style={{backgroundColor: "#7950f2", color: "fff"}} className={'button'}>Previous</button>
-                <button style={{backgroundColor: "#7950f2", color: "fff"}} className={'button'}>Next</button>
+                <button style={{backgroundColor: "#7950f2", color: "fff"}}
+                        className={'button'} onClick={handlePrevious}>Previous</button>
+                <button style={{backgroundColor: "#7950f2", color: "fff"}}
+                        className={'button'} onClick={handleNext}>Next</button>
             </div>
 
         </div>
