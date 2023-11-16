@@ -18,7 +18,7 @@ function App() {
                         <>
                             <Customer/>
                             <AccountOperations/>
-                            <BalanceDisplay/>
+                            <BalanceDisplay />
                         </>
                     )
             }
